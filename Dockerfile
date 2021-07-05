@@ -1,0 +1,7 @@
+FROM node:12-alpine
+COPY package*.json ./
+RUN npm install
+RUN npm run build
+COPY . .
+EXPOSE 4000
+ENTRYPOINT [ "npm", "start" ]
